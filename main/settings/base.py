@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     #third party libraries
     'rest_framework',
     'drf_yasg',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
     # 'debug_toolbar',
+    #my apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -177,4 +181,9 @@ LOGGING = {
             # will not be handled by the django logger. 
         }, 
     }, 
+}
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
 }
