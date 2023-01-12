@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     # 'debug_toolbar',
     #my apps
     'users',
-    'personal',
+  
 ]
 
 MIDDLEWARE = [
@@ -192,3 +192,5 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'users.serializers.CustomTokenSerializer',
     
 }
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "pictures"
