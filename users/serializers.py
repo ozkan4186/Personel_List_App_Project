@@ -64,10 +64,20 @@ class CustomTokenSerializer(TokenSerializer):
     class Meta(TokenSerializer.Meta):
         fields = ("key", "user")
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     
+    user = serializers.StringRelatedField()
+    user_id = serializers.IntegerField(required = False)
     class Meta:
         model = Profile
-        fields = "__all__"
+        fields = ("id","user","user_id","display_name","avatar","bio")
+
+
+    def update(self, validated_data,instance):
+        instance=super().update(validated_data,instance)
+        instance.user_id=self.context['request'].user.id
+        instance.save()
+        return instance    
 
 

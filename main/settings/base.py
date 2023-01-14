@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 'debug_toolbar',
     #my apps
     'users',
+    'personnel',
   
 ]
 
@@ -193,4 +194,5 @@ REST_AUTH_SERIALIZERS = {
     
 }
 MEDIA_URL = '/media/'
+STATIC_ROOT = BASE_DIR / STATIC_URL
 MEDIA_ROOT = BASE_DIR / "pictures"
